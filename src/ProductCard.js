@@ -3,35 +3,45 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: { minWidth: 275 },
   title: { fontSize: 14 },
-  pos: { marginBottom: 12 }
+  pos: { marginBottom: 12 },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  },
 });
 
 const ProductCard = ({product}) => {
-  const {id, name, price, description} = product;
+  const {id, name, price, description, image_url} = product;
   const classes = useStyles();
 
   return (
     <div>
-      <Card className={classes.root} variant='outlined'>
+      <Card xs={12} className={classes.root} variant='outlined'>
         <CardContent>
-          <Typography variant='h5' component='h2'>
-            {name}
-          </Typography>
-          <Typography>
+        <CardHeader
+        title={name.toUpperCase()}
+        subheader={price}
+        />
+        <CardMedia
+        className={classes.media}
+        image={image_url}
+        title={name}
+      />
+          <Typography paragraph>
             {description}
-          </Typography>
-          <Typography variant='h6'>
-            {price}
           </Typography>
         </CardContent>
         <CardActions>
           <Button size='small' color='primary'>Add to Cart</Button>
+          <Button size='small' color='primary'>Remove from Cart</Button>
         </CardActions>
       </Card>
     </div>
