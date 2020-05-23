@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
-import Home from './Home';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes';
 
 function App() {
   console.log('rendering App component')
   return (
     <div className="App">
-      <Home/>
+      <BrowserRouter>
+        <Routes/>
+      </BrowserRouter>
     </div>
   );
 }

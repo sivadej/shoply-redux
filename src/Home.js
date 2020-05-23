@@ -3,7 +3,6 @@ import { Grid, Container } from '@material-ui/core';
 import Header from './Header';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import ProductCard from './ProductCard';
-import Cart from './Cart';
 import { addToCart, removeFromCart } from './actions/actions';
 
 const TestLayout = () => {

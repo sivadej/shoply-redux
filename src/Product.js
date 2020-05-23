@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { Grid, Container } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Cart from './Cart';
 import Header from './Header';
