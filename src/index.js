@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Product from './Product';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -19,7 +20,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Route path='/' component={App} />
+        <Route exact path='/' component={App} />
+        <Route exact path='/product/:id' component={Product} />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
