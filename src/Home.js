@@ -22,7 +22,6 @@ const TestLayout = () => {
 
   return (
     <div>
-        <Cart />
         <Grid item>
           <Header />
         </Grid>
@@ -37,7 +36,6 @@ const TestLayout = () => {
             <Grid container spacing={2}>
               {Object.keys(products).map((id) => (
                 <Grid item xs={12} sm={6} lg={4} key={id}>
-                  {id}
                   <ProductCard 
                     id={id} 
                     product={products[id]} 

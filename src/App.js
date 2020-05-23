@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import TestLayout from './TestLayout';
+import Home from './Home';
 
 function App() {
   console.log('rendering App component')
   return (
     <div className="App">
-      <TestLayout/>
+      <Home/>
     </div>
   );
 }

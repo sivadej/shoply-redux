@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { Grid, Container } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Cart from './Cart';
+import Header from './Header';
 import { addToCart, removeFromCart } from './actions/actions';
 
 
@@ -28,6 +30,9 @@ const Product = () => {
 
   return (
     <div>
+      <Grid item>
+        <Header />
+      </Grid>
       {id} <br/>
       product detail page for {name} {description} {price} {image_url}
       <Button size='small' color='primary' onClick={()=>dispatchAddToCart(id)}>Add to Cart</Button>
