@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Products from './Products';
 import TestLayout from './TestLayout';
 
 function App() {
+  console.log('rendering App component')
   return (
     <div className="App">
       <TestLayout/>

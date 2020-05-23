@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Typography, Toolbar } from '@material-ui/core';
-import CastIcon from '@material-ui/icons/Cast';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(() => ({
@@ -9,11 +9,12 @@ const useStyles = makeStyles(() => ({
 
 const Header = () => {
   const classes = useStyles();
+  console.log('rendering Header component')
   return (
   <AppBar position='static'>
     <Toolbar>
-      <Typography className={classes.typographyStyles}>Header Here</Typography>
-      <CastIcon/>
+      <Typography className={classes.typographyStyles}>SivaDeals</Typography>
+      <ShoppingCartIcon/>
     </Toolbar>
   </AppBar>
   )

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import ProductCard from './ProductCard';
 
 // products data is object with id as key 
@@ -8,7 +8,7 @@ import ProductCard from './ProductCard';
 // (name, price, description, image_url)
 
 const Products = () => {
-  const products = useSelector(st => st.products);
+  const products = useSelector(st => st.products, shallowEqual);
   // NOTE: component is rendering twice on load.
   console.log('rendering Products', products)
   return (

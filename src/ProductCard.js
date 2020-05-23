@@ -18,9 +18,11 @@ const useStyles = makeStyles({
   },
 });
 
-const ProductCard = ({product}) => {
-  const {id, name, price, description, image_url} = product;
+const ProductCard = ({id, product, add, remove}) => {
+  const { name, price, description, image_url} = product;
   const classes = useStyles();
+
+  console.log(`rendering ProductCard component for ${name}`);
 
   return (
     <div>
@@ -40,8 +42,8 @@ const ProductCard = ({product}) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size='small' color='primary'>Add to Cart</Button>
-          <Button size='small' color='primary'>Remove from Cart</Button>
+          <Button size='small' color='primary' onClick={()=>add(id)}>Add to Cart</Button>
+          <Button size='small' color='primary' onClick={()=>remove(id)}>Remove from Cart</Button>
         </CardActions>
       </Card>
     </div>

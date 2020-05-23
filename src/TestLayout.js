@@ -1,13 +1,13 @@
 import React from 'react';
 import { Grid, Container } from '@material-ui/core';
 import Header from './Header';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import ProductCard from './ProductCard';
+import Cart from './Cart';
 import { addToCart, removeFromCart } from './actions/actions';
 
 const TestLayout = () => {
-  const products = useSelector(st => st.products);
-  const cart = useSelector(st=>st.cart)
+  const products = useSelector((st => st.products), shallowEqual);
   const dispatch = useDispatch();
 
   const dispatchAddToCart = (id) => {
@@ -17,19 +17,12 @@ const TestLayout = () => {
     dispatch(removeFromCart(id));
   }
 
-  //const productGridItems = products.map(item=>item)
+  console.log('rendering TestLayout component')
+  //<p>_DEV_ redux.cart: {JSON.stringify(cart)}</p>
 
   return (
     <div>
-        <p>_DEV_ redux.cart: {JSON.stringify(cart)}</p>
-        <button onClick={()=>dispatchAddToCart('abc')}>ADD_TO_CART abc</button>
-        <button onClick={()=>dispatchAddToCart('xyz')}>ADD_TO_CART xyz</button>
-        <button onClick={()=>dispatchAddToCart('ggg')}>ADD_TO_CART ggg</button>
-        <p>
-        <button onClick={()=>dispatchRemoveFromCart('abc')}>REMOVE abc</button>
-        <button onClick={()=>dispatchRemoveFromCart('xyz')}>REMOVE xyz</button>
-        <button onClick={()=>dispatchRemoveFromCart('ggg')}>REMOVE ggg</button>
-        </p>
+        <Cart />
         <Grid item>
           <Header />
         </Grid>
@@ -43,11 +36,17 @@ const TestLayout = () => {
         >
             <Grid container spacing={2}>
               {Object.keys(products).map((id) => (
-                <Grid item xs={12} sm={6} lg={4}><ProductCard product={products[id]} /></Grid>
+                <Grid item xs={12} sm={6} lg={4} key={id}>
+                  {id}
+                  <ProductCard 
+                    id={id} 
+                    product={products[id]} 
+                    add={dispatchAddToCart} 
+                    remove={dispatchRemoveFromCart}
+                  />
+                </Grid>
               ))}
             </Grid>
-
-          
         </Grid>
       </Container>
     </div>
