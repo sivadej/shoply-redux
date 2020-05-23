@@ -8,9 +8,12 @@ import { BrowserRouter, Route } from 'react-router-dom';
 // redux provider stuff
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './rootReducer';
+import rootReducer from './reducers/rootReducer';
 
-const store = createStore(rootReducer);
+// dev tools
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
   <React.StrictMode>
