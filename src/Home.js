@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Grid, Container } from '@material-ui/core';
 import Header from './Header';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import ProductCard from './ProductCard';
 import { addToCart, removeFromCart } from './actions/actions';
+import { getData } from './api';
 
 const TestLayout = () => {
   const products = useSelector((st => st.products), shallowEqual);
   const dispatch = useDispatch();
+  const [stuff, setStuff] = useState(null);
+
+  const setData = async() => {
+    const resp = await getData();
+    setStuff(resp);
+  }
+
+  useEffect(()=> {
+    setData();
+  },[])
 
   const dispatchAddToCart = (id) => {
     dispatch(addToCart(id));
@@ -21,6 +32,7 @@ const TestLayout = () => {
 
   return (
     <div>
+        <p>{JSON.stringify(stuff)} <button onClick={()=>setData()}>refresh api data</button></p>
         <Grid item>
           <Header />
         </Grid>
