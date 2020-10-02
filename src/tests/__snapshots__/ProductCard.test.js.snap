@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-root-118 MuiPaper-outlined MuiPaper-rounded"
+      xs="12"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <div
+          class="MuiCardHeader-root"
+        >
+          <div
+            class="MuiCardHeader-content"
+          >
+            <span
+              class="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+            >
+              TEST ITEM
+            </span>
+            <span
+              class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+            >
+              999.99
+            </span>
+          </div>
+        </div>
+        <div
+          class="MuiCardMedia-root makeStyles-media-121"
+          style="background-image: url(https://via.placeholder.com/350x300);"
+          title="test item"
+        />
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph"
+        >
+          test item description
+        </p>
+      </div>
+      <div
+        class="MuiCardActions-root MuiCardActions-spacing"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Add to Cart
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Remove from Cart
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

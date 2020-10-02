@@ -5,7 +5,7 @@ import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import ProductCard from './ProductCard';
 import { addToCart, removeFromCart } from './actions/actions';
 
-const TestLayout = () => {
+const Home = () => {
   const products = useSelector((st => st.products), shallowEqual);
   const dispatch = useDispatch();
 
@@ -16,8 +16,7 @@ const TestLayout = () => {
     dispatch(removeFromCart(id));
   }
 
-  console.log('rendering TestLayout component')
-  //<p>_DEV_ redux.cart: {JSON.stringify(cart)}</p>
+  console.log('rendering Home component')
 
   return (
     <div>
@@ -50,4 +49,4 @@ const TestLayout = () => {
   );
 };
 
-export default TestLayout;
+export default Home;
